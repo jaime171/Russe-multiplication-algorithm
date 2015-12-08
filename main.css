@@ -1,5 +1,7 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
+		margin: 0;
+	padding: 0;
 }
 
 h1{
@@ -8,8 +10,9 @@ h1{
 
 .test {
 	background-color: #15C895;
-	height: 300px;
 	width: 50%;
+	height: 100%;
+	max-height: 400px;
 	max-width: 500px;
 	min-width: 250px;
 	margin: 0 auto;
@@ -32,7 +35,6 @@ h1{
 	-moz-border-radius: 20px;
 }
 .test input[type=button]{
-	margin: 20px;
 	background-color: #118B68;
 	color: white;
 	border-radius: 20px;
@@ -52,4 +54,20 @@ h1{
 	color: white;
 	font-size: 25px;
 	margin: 5px;
+}
+.images-slider {
+	width: 100%;
+	margin-top: 150px;
+	height: auto;
+
+}
+.slides {
+	display: inline-block;
+    background-color: blue;
+    height: 200px;
+    width: 300px;
+}
+
+.hidden {
+	display: none;
 }

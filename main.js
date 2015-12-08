@@ -66,21 +66,18 @@
 
 // Rever a String and delete commas
 	/*var phrase = "w3resource";
-	reverseMethod = phrase.split("").reverse().join(),
-	newString = reverseMethod.replace(/,/g, "");
-	console.log(newString);*/
+	reverseMethod = phrase.split("").reverse().join("");
+	console.log(reverseMethod);*/
 
 
 
 // Leap Year 
-	/*var date = new Date(),
-		addYear = date.getFullYear();
-	function numberOfDays(year){
+/*	function numberOfDays(year){
 		var calcularAño = (year%4 != 0) ? console.log("Año normal") : console.log("Año bisiesto");
 	};
-	numberOfDays(2016);*/
+	numberOfDays(2015);
 
-
+*/
 
 
 
@@ -119,6 +116,207 @@
 	myFunction()*/
 
 
+// Days until Chrismas
+	/*var date = new Date(),
+		chrismas = new Date(date.getFullYear(),11,25),
+		daysInAYear = 365,
+		calculateChrismas = chrismas.getDate()-date.getDate(),
+		result = daysInAYear - calculateChrismas;
+		console.log(daysInAYear - result + " Days until Christmas")
+	*/
+
+
+
+// Url of the site
+	// alert(document.URL); 
+
+
+
+
+// Reverse number
+ /* function reverseNumber(num){
+    num = num + "";
+    console.log(num.split("").reverse().join("")); 
+  }
+
+  reverseNumber(320);*/
+
+
+
+
+// Palindrome function
+  /*function palindrome(phrase){
+    var spaceDelete = phrase.replace(/\s+/g, '');
+    reverse = spaceDelete.split("").reverse().join("");
+    if (spaceDelete === reverse) {
+        console.log("Es un palindromo");
+    } else {
+        console.log("No es un palindromo");
+    }
+  }
+    
+   palindrome("race car")*/
+
+
+
+// alphabetical order
+	/*var alphabet = "abcdefghijklmnopqrstuvwxyz",
+		alpArray = alphabet.split(""),
+		todos = [],
+		firstLetter = [],
+		LastLetter = [],
+		orderArray = [];
+	function alphabeticalOrder(phrase) {
+	  var stringArray = phrase.split("");
+	  console.log(stringArray)
+	  for (var j = 0; j < stringArray.length; j++) {
+	  	for (var i = 0; i < alpArray.length; i++) {
+	      var arreglo = [],
+	      nombreArreglo = [];
+	      if(stringArray[j] === alpArray[i]) {
+	    		arreglo = [i];
+	    		todos.push(arreglo[0]);
+	      }
+	    }
+	  }
+	todos.sort(function(a, b){return a-b});
+	console.log(todos)
+	var frase = phrase.split("").sort().join("");
+	console.log(frase)
+	}
+	alphabeticalOrder("jaime")
+	*/
+
+
+
+
+// to uupercase thefirst letter
+	/*function upperCase(phrase) {
+		var arr = phrase.split(" "),
+			newArr = [];
+		for (var i = 0; i < arr.length; i++) {
+			newArr.push(arr[i].charAt(0).toUpperCase() + arr[i].slice(1))
+		}
+		console.log(newArr.join(" "));
+	}
+
+	upperCase("jaime martinez simental salvador")*/
+
+
+
+
+// Longest wornd n a String
+/*	function longString(phrase) {
+	  var arr = phrase.split(" "),
+	      newArr = arr[0];
+	    for (var i = 0; i < arr.length; i++) {
+	      if (newArr.length < arr[i].length) {
+	      	newArr = arr[i];
+	      }
+	    }
+	    console.log(newArr)
+	};
+
+	longString("Jaime salvadoreeddddddddddddde martinezddddddddd simental")*/
+
+
+
+// Vowels in a string
+/*	function vowelString(phrase) {
+	  var arr = phrase.split(""),
+	      vowelArray = "aeiou".split(""),
+	      sum = 0;
+	  for (var j = 0; j < vowelArray.length; j++) {
+	    for (var i = 0; i < arr.length; i++) {
+	      if(vowelArray[j] === arr[i]){
+	    		sum += arr[i].length;
+	    	}
+	    }
+	  }
+	console.log("There are " + sum + " vowels in " + phrase)
+	};
+
+	vowelString("iliana mellado preciosa")*/
+
+
+
+// Find if is a Prime number
+/*	var number = 7,
+		  total;
+	function primeNumber(num) {
+	  if (num === 1) {
+	  	return false
+	  }
+	 for (var i = 2; i < num; i++) {
+	  	if (num % i === 0){
+	  		return false
+	  	} else {
+	  		return	true
+	  	}
+	  }
+	};
+	total = primeNumber(number);
+	if (total === false) {
+		console.log("El numero " + number + " no es primo");
+	} else {
+		console.log("El numero " + number + " es primo");
+	}*/
+
+
+
+// Return type of elemente
+/*	function type(value) {
+		return typeof value
+	}
+	console.log(type(true))*/
+
+
+
+
+
+
+
+// Img slider 
+	// var counter = 0;
+	// var container = $('.images-slider img');
+	// var allImg = [
+	// 	"img/gallery-1.jpg",
+	// 	"img/gallery-2.jpg",
+	// 	"img/gallery-3.jpg",
+	// 	"img/gallery-4.jpg",
+	// 	"img/gallery-5.jpg",
+	// 	"img/gallery-6.jpg",
+	// 	"img/gallery-7.jpg",
+	// 	"img/gallery-8.jpg",
+	// 	"img/gallery-9.jpg"
+	// ];
+	// var downImg = new Image();
+	// downImg.onload = function(){
+	//   loadImages();
+	//   setInterval( loadImages, 3000);
+	// };
+	// function loadImages() {
+	// 	for (var i = 0; i < container.length; i++) {
+	// 		$(container[i]).attr('src', allImg[i]);
+	// 		counter++
+	// 		console.log(counter)
+	// 		if (counter > 3 && counter < 7) {
+	// 			$(container[i]).attr('src', allImg[i + 3]);
+	// 		} 
+	// 		if (counter > 6) {
+	// 			$(container[i]).attr('src', allImg[i + 6]);
+	// 		   }
+	// 		if(counter >= allImg.length) {
+	// 			counter = 0;
+	// 		}
+	// 	}
+	// };
+
+
+	// downImg.src = "img/gallery-1.jpg";
+
+
+
 
 
 
@@ -154,7 +352,7 @@
 	    }
 	}
 	console.log(resultado);
-	*/
+	
 
 
 
