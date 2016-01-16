@@ -2,14 +2,66 @@
 <html lang="en" class="no-js">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Alianza</title>
-	<link rel="stylesheet" href="main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Javascript Tutorial</title>
+	<link rel="stylesheet" href="styles/main.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1>Javascript Test</h1>
-	<div class="test">
-		<h2>Russe Multiplication</h2>
+<header>
+  <h1>Javascript Exercices</h1>
+	<div class="date">
+  	<div id="date"></div>
+  </div>
+</header>
+<div class="wrapper">
+  <div class="full-width">
+  	<div class="info-container">
+      <p>This is a project for those who have problems with <span>Javascript,</span> and they don't know where to start.</p>
+      <p>Each of the modules have their respective code copy so you can see how it works.</p>
+      <p>Everything is made with pure Javascript, except the animations, they require JQuery library.</p>
+    </div>
+  </div>
+  
+
+	<div class="module module-gray" id="module-1">
+		<div class="trigger">
+			<h2>Russe Multiplication</h2>
+			<p>A different way to multiply</p>
+		  <i class="fa fa-caret-down"></i>
+		</div>
+		<div class="hidden">
+		  <i class="fa fa-times" id="close"></i>
+		  <div>
+			  <label for="input1">Number 1</label>
+			  <input type="number" id="inputRusseOne">
+		  </div>
+		  <div>
+			  <label for="input2">Number 2</label>
+			  <input type="number" id="inputRusseTwo">
+		  </div>
+  		  <input class="btn-accion" type="button" id="button-1" value="Russe Multiplication" data-ejercice="1">
+  		  <input class="" type="button" id="clean" value="Clean">
+  		<div id="russeResults"></div>
+  		<a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication"target="_blank">Algorithm description</a>
+		</div>
+	</div>
+
+
+</div><!-- wrapper container -->
+
+	
+
+
+
+
+
+
+
+<!-- 	<div class="test">
+		<h2>Test number 2</h2>
 		<div>
 			<label for="input1">Number 1</label>
 			<input type="text" class="values" id="input1">
@@ -18,42 +70,27 @@
 			<label for="input2">Number 2</label>
 			<input type="text" class="values" id="input2">
 		</div>
-  		<input type="button" id="button" value="Multiplicacion Russe">
+  		<input class="btn-accion" type="button" id="button-2" value="test 2" data-ejercice="2">
   		<input type="button" id="limpiar" value="Limpiar">
   		<div id="resultados"></div>
-	</div>
-
-
-<!-- 	<div class="images-slider" id="slider">
-		<div class="slides" id="slider-1"></div>
-		<div class="slides" id="slider-2"></div>
-		<div class="slides" id="slider-3"></div>
 	</div> -->
 
-	<div class="images-slider" id="slider">
-		<img src="" class="slides" id="slider-1">
-		<img src="" class="slides" id="slider-2">
-		<img src="" class="slides" id="slider-3">
-<!-- 	<div id="slider2">
-		<img src="" class="slides" id="slider-4">
-		<img src="" class="slides" id="slider-5">
-		<img src="" class="slides" id="slider-6">
-	</div>
-	<div id="slider2">
-		<img src="" class="slides" id="slider-7">
-		<img src="" class="slides" id="slider-8">
-		<img src="" class="slides" id="slider-9">
-	</div> -->
-	</div>
-	
+
+
+
+	<div id="lightbox"></div>
+
 
 
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="main.js"></script> 
+<script src="js/date.js"></script>
+<script src="js/animations.js"></script> 
+<script src="js/main.js"></script> 
+
+
 </body>
 </html>
-
 
 
 
