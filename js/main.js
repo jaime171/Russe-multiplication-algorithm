@@ -59,29 +59,28 @@ function example_2() {
 
 
 // Call to each function
-// var allFunctions = {
-//   exercice_1: function() {
-//   	example_1();
-//   	var show = example_1.toString();
-//   	codeDisplay.innerHTML = "<pre><code>" + show + "</pre></code>";
-//   	console.log(show)
-//   },
-//   exercice_2: function() {
-//   	example_2();	
-//   }
-// }
+var allFunctions = {
+  exercice_1: function() {
+  	example_1();
+  },
+  exercice_2: function() {
+  	example_2();	
+  }
+}
 
 
 
 
 
-
+var body = document.body;
 var buttons = document.getElementsByClassName("btn-accion");
 var closeButtons = document.getElementsByClassName("fa-times");
 var codeButton = document.getElementsByClassName('btn-code');
 var closeCode = document.getElementById('close-code');
 var buttonsCount = buttons.length;
 var functions = 'example_';
+
+
 
 // Runs the function and slide module animation.
 for (var i = 0; i < buttonsCount; i++) {
@@ -92,8 +91,8 @@ for (var i = 0; i < buttonsCount; i++) {
   buttons[i].onclick = function(e) {
     buttomNumber = this.parentNode.getAttribute('data-exercise');
     $("#module-"+buttomNumber).slideDown('slow');
-    // allFunctions['exercice_' + buttomNumber]();
-    window[functions+buttomNumber]();
+    allFunctions['exercice_' + buttomNumber]();
+    // window[functions+buttomNumber]();
   }
   closeButtons[i].onclick = function(e) {
   	buttonClose = this.parentNode.getAttribute('id')
@@ -111,9 +110,11 @@ for (var i = 0; i < buttonsCount; i++) {
   	console.log(code);
   	codeDisplayModule.innerHTML = "<pre><code>" + codeString + "</pre></code>";
   	codeDisplay.classList.remove('hidden');
+  	body.style.overflow = "hidden";
   }
   closeCode.onclick = function (e) {
   	codeDisplay.className += ' hidden';
+  	body.style.overflow = "auto";
   }
 
 
