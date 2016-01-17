@@ -3,16 +3,16 @@
 
 
 // Russe Multiplication
-function eje_1() {
-  var button = document.getElementById('button'),
-  		limpiar = document.getElementById('clean'),
+function example_1() {
+  var button = document.getElementById('button-1'),
+  		clean = document.getElementById('clean'),
   		resultText = document.getElementById('russeResults'),
-  		primero = document.getElementById('inputRusseOne'),
-  		segundo = document.getElementById('inputRusseTwo');
-  		resultText.innerHTML = "Inserte un Numero";
+  		firstInput = document.getElementById('inputRusseOne'),
+  		secondInput = document.getElementById('inputRusseTwo');
+  		resultText.innerHTML = "Write two numbers";
   function multiplication(){
-    x = parseInt(primero.value), 
-  	y = parseInt(segundo.value),
+    x = parseInt(firstInput.value), 
+  	y = parseInt(secondInput.value),
   	str = "Not a number";
   	if((isNaN(x) || isNaN(y)) === false){
   		result = russe(x, y);
@@ -22,55 +22,101 @@ function eje_1() {
   	}
   }
   function russe(u, y) {
-  	var resultado = 0;
+  	var result = 0;
   	for(var i = x; i >= 1; i/=2 ){
   		if(i % 2 != 0){
-  			resultado += y;
+  			result += y;
   		} 
   		y *= 2;
   	}
-  	return resultado;
+  	return result;
   }
-  limpiar.onclick = function(){
- 		primero.value = "";
- 		segundo.value = "";
+  button.onclick = function() {
+ 		multiplication(); 
+ 	}
+  clean.onclick = function(){
+ 		firstInput.value = "";
+ 		secondInput.value = "";
  		resultText.innerHTML = "";
  	}
- 	primero.onfocus = function(){
+ 	firstInput.onfocus = function(){
  		resultText.innerHTML = "";
  	}
- 	segundo.onfocus = function(){
+ 	secondInput.onfocus = function(){
  		resultText.innerHTML = "";
  	}
-  multiplication();
-}
-
-function eje_2() {
-	console.log("work-2")
+  
 }
 
 
-var allFunctions = {
-  ejercice_1: function() {
-  	eje_1();
-  },
-  ejercice_2: function() {
-  	eje_2();
-  }
+
+function example_2() {
+	console.log("works-2")
 }
+
+
+
+
+
+// Call to each function
+// var allFunctions = {
+//   exercice_1: function() {
+//   	example_1();
+//   	var show = example_1.toString();
+//   	codeDisplay.innerHTML = "<pre><code>" + show + "</pre></code>";
+//   	console.log(show)
+//   },
+//   exercice_2: function() {
+//   	example_2();	
+//   }
+// }
+
+
+
+
+
 
 var buttons = document.getElementsByClassName("btn-accion");
+var closeButtons = document.getElementsByClassName("fa-times");
+var codeButton = document.getElementsByClassName('btn-code');
+var closeCode = document.getElementById('close-code');
 var buttonsCount = buttons.length;
-// var lightbox = document.getElementById('lightbox');
+var functions = 'example_';
 
-
+// Runs the function and slide module animation.
 for (var i = 0; i < buttonsCount; i++) {
+  var buttomNumber;
+  var buttonClose;
+  var code;
+  var codeDisplay = document.getElementById('lightbox');
   buttons[i].onclick = function(e) {
-    var buttonEach = document.getElementById(this.id);
-    var ejerciceNumber = buttonEach.dataset.ejercice;
-    console.log(ejerciceNumber);
-    allFunctions['ejercice_' + ejerciceNumber]();
+    buttomNumber = this.parentNode.getAttribute('data-exercise');
+    $("#module-"+buttomNumber).slideDown('slow');
+    // allFunctions['exercice_' + buttomNumber]();
+    window[functions+buttomNumber]();
   }
+  closeButtons[i].onclick = function(e) {
+  	buttonClose = this.parentNode.getAttribute('id')
+  	$("#"+buttonClose).slideUp('slow');
+  	console.log(buttonClose)
+  }
+  codeButton[i].onclick = function (e) {
+  	var count = 0;
+  	var codeDisplayModule = document.getElementById('lightbox-module');
+  	console.log(codeDisplay)
+  	code = this.parentNode.parentNode.getAttribute('data-exercise');
+  	// console.log(example_+one.toString())
+  	var codeComplete = (window[functions+code]);
+    var codeString = codeComplete.toString();
+  	console.log(code);
+  	codeDisplayModule.innerHTML = "<pre><code>" + codeString + "</pre></code>";
+  	codeDisplay.classList.remove('hidden');
+  }
+  closeCode.onclick = function (e) {
+  	codeDisplay.className += ' hidden';
+  }
+
+
 }
 
 
@@ -78,8 +124,13 @@ for (var i = 0; i < buttonsCount; i++) {
 
 
 
-
-
+  // function showCode() {
+  // 	var codeDisplay = document.getElementById('lightbox');
+  // 	var show = example_1.toString();
+  //   codeDisplay.innerHTML = "<pre><code>" + show + "</pre></code>";
+  // 	console.log(show)
+  // }
+  // showCode();
 
 
 

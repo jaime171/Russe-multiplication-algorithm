@@ -1,6 +1,8 @@
-$('.trigger').on('click', function(){
-  $(".hidden").slideDown("slow");
-});
-$('#close').on('click', function(){
-  $(".hidden").slideUp("slow");
-});
+// $('.trigger').on('click', function(){
+// 	var triggerNumber = $(this).parent().attr('data-exercise');
+//   $("#module-"+triggerNumber).slideDown('slow');
+// });
+// $('.fa-times').on('click', function(){
+// 	var triggerNumber = $(this).parent().attr('id');
+//   $("#"+triggerNumber).slideUp('slow');
+// });

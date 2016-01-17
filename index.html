@@ -19,21 +19,21 @@
 <div class="wrapper">
   <div class="full-width">
   	<div class="info-container">
-      <p>This is a project for those who have problems with <span>Javascript,</span> and they don't know where to start.</p>
+      <p>This project is for those who have problems with <span>JavaScript,</span> and they don't know where to start.</p>
       <p>Each of the modules have their respective code copy so you can see how it works.</p>
-      <p>Everything is made with pure Javascript, except the animations, they require JQuery library.</p>
+      <p>Everything is made with pure JavaScript, except the animations, they require JQuery library.</p>
     </div>
   </div>
   
 
-	<div class="module module-gray" id="module-1">
-		<div class="trigger">
+	<div class="module module-gray" data-exercise="1">
+		<div class="trigger btn-accion">
 			<h2>Russe Multiplication</h2>
 			<p>A different way to multiply</p>
 		  <i class="fa fa-caret-down"></i>
 		</div>
-		<div class="hidden">
-		  <i class="fa fa-times" id="close"></i>
+		<div class="hidden" id="module-1">
+		  <a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication"target="_blank">Algorithm description</a>
 		  <div>
 			  <label for="input1">Number 1</label>
 			  <input type="number" id="inputRusseOne">
@@ -42,13 +42,52 @@
 			  <label for="input2">Number 2</label>
 			  <input type="number" id="inputRusseTwo">
 		  </div>
-  		  <input class="btn-accion" type="button" id="button-1" value="Russe Multiplication" data-ejercice="1">
+  		  <input type="button" id="button-1" value="Russe Multiplication" >
   		  <input class="" type="button" id="clean" value="Clean">
   		<div id="russeResults"></div>
-  		<a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication"target="_blank">Algorithm description</a>
+  		<input class="btn-code" type="button" value="Code"><div></div>
+  		<i class="fa fa-times"></i>
 		</div>
 	</div>
 
+
+
+	
+	
+	
+
+	<div class="module module-gray" data-exercise="2">
+		<div class="trigger btn-accion">
+			<h2>Russe</h2>
+			<p>A different way to multiply</p>
+		  <i class="fa fa-caret-down"></i>
+		</div>
+		<div class="hidden" id="module-2">
+		  <a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication"target="_blank">Algorithm description</a>
+		  <div>
+			  <label for="input1">Number 1</label>
+			  <input type="number" id="inputRusseOne">
+		  </div>
+		  <div>
+			  <label for="input2">Number 2</label>
+			  <input type="number" id="inputRusseTwo">
+		  </div>
+  		  <input type="button" id="button-1" value="Russe" >
+  		  <input class="" type="button" id="clean" value="Clean">
+  		<div id="russeResults"></div>
+  		<input class="btn-code" type="button" value="Code"><div></div>
+  		<i class="fa fa-times"></i>
+		</div>
+	</div>
+
+
+
+  <div class="lightbox hidden" id="lightbox">
+    <div id="lightbox-module">
+    	
+    </div>
+  	<i class="fa fa-times" id="close-code"></i>
+  </div>
 
 </div><!-- wrapper container -->
 
@@ -60,28 +99,14 @@
 
 
 
-<!-- 	<div class="test">
-		<h2>Test number 2</h2>
-		<div>
-			<label for="input1">Number 1</label>
-			<input type="text" class="values" id="input1">
-		</div>
-		<div>
-			<label for="input2">Number 2</label>
-			<input type="text" class="values" id="input2">
-		</div>
-  		<input class="btn-accion" type="button" id="button-2" value="test 2" data-ejercice="2">
-  		<input type="button" id="limpiar" value="Limpiar">
-  		<div id="resultados"></div>
-	</div> -->
 
 
 
 
-	<div id="lightbox"></div>
 
-
-
+<footer>
+	<p>If you have any Feedback or Question you can follow me on <a href="https://www.twitter.com/jaimesimental">twitter</a></p>
+</footer>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="js/date.js"></script>
