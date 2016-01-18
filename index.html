@@ -3,11 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-	<title>Javascript Tutorial</title>
-	<link rel="stylesheet" href="styles/main.css">
+	<title>JavaScript Tutorial</title>
+	<meta name="description" content="Jaime Simental Portfolio Front-End developer. This project is meant to those people who are starting in the world of JavaScript and they don't know where to start.">
+  <meta name="keywords" content="portfolio, design, web development, web design, creative, mexico"/>
+  <meta name="author" content="Jaime Simental">
+	<meta property="og:title" content="Mission Jimmy | JavaScript Tutorial"/>
+  <meta property="og:url" content="http://missionjimmy.com/tutorial.html" />
+  <meta property="og:image" content="http://missionjimmy.com/img/logo-facebook.jpg"/>
+  <meta property="og:description" content="This project is meant to those people who are starting in the world of JavaScript and they don't know where to start."/>
+  <link rel="shortcut icon" href="favicon.ico?v=2"/>
+	<link rel="stylesheet" href="css/main_examples.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link type="text/plain" rel="author" href="humans.txt"/> 
 </head>
 <body>
 <header>
@@ -19,9 +28,10 @@
 <div class="wrapper">
   <div class="full-width">
   	<div class="info-container">
-      <p>This project is for those who have problems with <span>JavaScript,</span> and they don't know where to start.</p>
+      <p>This project is meant to those people who are starting in the world of <span><a href="http://www.w3schools.com/js/" target="_blank">JavaScript</a></span> and they don't know where to start.</p>
       <p>Each of the modules have their respective code copy so you can see how it works.</p>
-      <p>Everything is made with pure JavaScript, except the animations, they require JQuery library.</p>
+      <p>All codes have their respective comments so you can easy understand what do each of the functions, variables, conditionals, arrays or loops.</p>
+      <p>Everything is made with pure JavaScript, except animations, these require JQuery library.</p>
     </div>
   </div>
   
@@ -44,7 +54,7 @@
 		  </div>
   		  <input type="button" id="button-1" value="Russe Multiplication" >
   		  <input class="" type="button" id="clean" value="Clean">
-  		<div id="russeResults"></div>
+  		<div class="output" id="russeResults"></div>
   		<input class="btn-code" type="button" value="Code"><div></div>
   		<i class="fa fa-times"></i>
 		</div>
@@ -58,23 +68,18 @@
 
 	<div class="module module-gray" data-exercise="2">
 		<div class="trigger btn-accion">
-			<h2>Russe</h2>
-			<p>A different way to multiply</p>
+			<h2>Change vowel order</h2>
+			<p>The last vowel replace the first one</p>
 		  <i class="fa fa-caret-down"></i>
 		</div>
 		<div class="hidden" id="module-2">
-		  <a href="https://en.wikipedia.org/wiki/Ancient_Egyptian_multiplication#Russian_peasant_multiplication"target="_blank">Algorithm description</a>
 		  <div>
-			  <label for="input1">Number 1</label>
-			  <input type="number" id="inputRusseOne">
+			  <label for="input1">String</label>
+			  <input type="text" id="inputReplaceVowel">
 		  </div>
-		  <div>
-			  <label for="input2">Number 2</label>
-			  <input type="number" id="inputRusseTwo">
-		  </div>
-  		  <input type="button" id="button-1" value="Russe" >
-  		  <input class="" type="button" id="clean" value="Clean">
-  		<div id="russeResults"></div>
+  		  <input type="button" id="button-2" value="Change vowel order" >
+  		  <input class="" type="button" id="clean-2" value="Clean">
+  		<div class="output" id="vowelReplaceResults"></div>
   		<input class="btn-code" type="button" value="Code"><div></div>
   		<i class="fa fa-times"></i>
 		</div>
@@ -105,13 +110,12 @@
 
 
 <footer>
-	<p>If you have any Feedback or Question you can follow me on <a href="https://www.twitter.com/jaimesimental">twitter</a></p>
+	<p>If you have any Feedback or Question you can contact me by <a href="https://www.twitter.com/jaimesimental">twitter</a></p>
 </footer>
 
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="js/date.js"></script>
-<script src="js/animations.js"></script> 
-<script src="js/main.js"></script> 
+<script src="js/main_examples.js"></script> 
 
 
 </body>

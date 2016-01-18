@@ -1,6 +1,7 @@
 //Load everything 
 window.onload = function() {
 	showDate();
+	siteFunctions();
 }
 
 //Calculate Date 

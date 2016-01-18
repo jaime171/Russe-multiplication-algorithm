@@ -5,54 +5,119 @@
 // Russe Multiplication
 function example_1() {
   var button = document.getElementById('button-1'),
-  		clean = document.getElementById('clean'),
-  		resultText = document.getElementById('russeResults'),
-  		firstInput = document.getElementById('inputRusseOne'),
-  		secondInput = document.getElementById('inputRusseTwo');
-  		resultText.innerHTML = "Write two numbers";
+      clean = document.getElementById('clean'),
+      resultText = document.getElementById('russeResults'),
+      firstInput = document.getElementById('inputRusseOne'),
+      secondInput = document.getElementById('inputRusseTwo');
+      firstInput.value = "";
+      secondInput.value = "";
+      resultText.innerHTML = "Write two numbers";
   function multiplication(){
     x = parseInt(firstInput.value), 
-  	y = parseInt(secondInput.value),
-  	str = "Not a number";
-  	if((isNaN(x) || isNaN(y)) === false){
-  		result = russe(x, y);
-  		resultText.innerHTML = "The result is: " + "<strong>" + result + "</strong>";
-  	} else if((isNaN(x) || isNaN(y)) === true){
-  		resultText.innerHTML = str;
-  	}
+    y = parseInt(secondInput.value),
+    str = "Not a number";
+    if((isNaN(x) || isNaN(y)) === false){
+      var result = russe(x, y);
+      resultText.innerHTML = "The result is: " + "<strong>" + result + "</strong>";
+    } else if((isNaN(x) || isNaN(y)) === true){
+      resultText.innerHTML = str;
+    }
   }
   function russe(u, y) {
-  	var result = 0;
-  	for(var i = x; i >= 1; i/=2 ){
-  		if(i % 2 != 0){
-  			result += y;
-  		} 
-  		y *= 2;
-  	}
-  	return result;
+    var result = 0;
+    for(var i = x; i >= 1; i/=2 ){
+      if(i % 2 != 0){
+    	  result += y;
+    	} 
+      y *= 2;
+    }
+    return result;
   }
   button.onclick = function() {
- 		multiplication(); 
- 	}
+    multiplication(); 
+  }
   clean.onclick = function(){
- 		firstInput.value = "";
- 		secondInput.value = "";
- 		resultText.innerHTML = "";
- 	}
- 	firstInput.onfocus = function(){
- 		resultText.innerHTML = "";
- 	}
- 	secondInput.onfocus = function(){
- 		resultText.innerHTML = "";
- 	}
-  
+    firstInput.value = "";
+    secondInput.value = "";
+    resultText.innerHTML = "";
+  }
+  firstInput.onfocus = function(){
+    resultText.innerHTML = "";
+  }
+  secondInput.onfocus = function(){
+    resultText.innerHTML = "";
+  }
 }
 
 
 
+
+
+// Cambio de orden String
 function example_2() {
-	console.log("works-2")
+  var button = document.getElementById('button-2'),
+      clean = document.getElementById('clean-2'),
+      resultText = document.getElementById('vowelReplaceResults'),
+      firstInput = document.getElementById('inputReplaceVowel');
+      firstInput.value = "";
+      resultText.innerHTML = "Write a String"
+  function validation() {
+  	var x = firstInput.value;
+  	var noString = "Please write a String";
+  	if ( isNaN(x) !== isNaN(noString) ) {
+      resultText.innerHTML = noString;
+    } else {
+      var result = vowelChange(x);
+       resultText.innerHTML = 'Original input: ' + '<strong>' + x + '</strong>'+ '<br>' + 'Reverse vowels output: ' + '<strong>' + result + '</strong>';
+    }
+  }
+  function vowelChange(phrase) {
+  	var phraseArr = phrase.split(""),
+        vowels = "aeiou".split(""),
+        newArr = [],
+        k = 0;
+    for (j = 0; j < phraseArr.length; j++) {
+      for (i = 0; i < vowels.length; i++) {
+        if ( phraseArr[j] === vowels[i]) {
+          newArr.unshift(vowels[i]);
+        }
+      }
+    }
+    for (var j = 0; j < phraseArr.length; j++) {
+      for (var i = 0; i < vowels.length; i++) {
+        if(phraseArr[j] === vowels[i]) {
+          phraseArr.splice(j, 1, newArr[k++]);
+          break
+        }
+      }
+    }
+    var total = phraseArr.join("");
+    return total;
+  }
+  button.onclick = function() {
+    validation(); 
+  }
+  clean.onclick = function(){
+    firstInput.value = "";
+    resultText.innerHTML = "";
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,68 +135,48 @@ var allFunctions = {
 
 
 
+function siteFunctions(){
+  var body = document.body,
+      buttons = document.getElementsByClassName("btn-accion"),
+      closeButtons = document.getElementsByClassName("fa-times"),
+      codeButton = document.getElementsByClassName('btn-code'),
+      closeCode = document.getElementById('close-code'),
+      buttonsCount = buttons.length,
+      functions = 'example_';
 
-
-var body = document.body;
-var buttons = document.getElementsByClassName("btn-accion");
-var closeButtons = document.getElementsByClassName("fa-times");
-var codeButton = document.getElementsByClassName('btn-code');
-var closeCode = document.getElementById('close-code');
-var buttonsCount = buttons.length;
-var functions = 'example_';
-
-
-
-// Runs the function and slide module animation.
-for (var i = 0; i < buttonsCount; i++) {
-  var buttomNumber;
-  var buttonClose;
-  var code;
-  var codeDisplay = document.getElementById('lightbox');
-  buttons[i].onclick = function(e) {
-    buttomNumber = this.parentNode.getAttribute('data-exercise');
-    $("#module-"+buttomNumber).slideDown('slow');
-    allFunctions['exercice_' + buttomNumber]();
-    // window[functions+buttomNumber]();
+  // Runs the function and slide module animation.
+  for (var i = 0; i < buttonsCount; i++) {
+    var codeDisplay = document.getElementById('lightbox');
+    buttons[i].onclick = function(e) {
+      var buttomNumber = this.parentNode.getAttribute('data-exercise');
+      $("#module-"+buttomNumber).slideDown('slow');
+      allFunctions['exercice_' + buttomNumber]();
+    }
+    closeButtons[i].onclick = function(e) {
+      var	buttonClose = this.parentNode.getAttribute('id');
+    	$("#"+buttonClose).slideUp('slow');
+    	console.log(buttonClose)
+    }
+    codeButton[i].onclick = function (e) {
+    	var codeDisplayModule = document.getElementById('lightbox-module'),
+    	    code = this.parentNode.parentNode.getAttribute('data-exercise'),
+    	    codeComplete = (window[functions+code]),
+    	    codeString = codeComplete.toString();
+    	codeDisplayModule.innerHTML = "<pre><code>" + codeString + "</pre></code>";
+    	codeDisplay.classList.remove('hidden');
+    	body.style.overflow = "hidden";
+    }
+    closeCode.onclick = function (e) {
+    	codeDisplay.className += ' hidden';
+    	body.style.overflow = "auto";
+    }
   }
-  closeButtons[i].onclick = function(e) {
-  	buttonClose = this.parentNode.getAttribute('id')
-  	$("#"+buttonClose).slideUp('slow');
-  	console.log(buttonClose)
-  }
-  codeButton[i].onclick = function (e) {
-  	var count = 0;
-  	var codeDisplayModule = document.getElementById('lightbox-module');
-  	console.log(codeDisplay)
-  	code = this.parentNode.parentNode.getAttribute('data-exercise');
-  	// console.log(example_+one.toString())
-  	var codeComplete = (window[functions+code]);
-    var codeString = codeComplete.toString();
-  	console.log(code);
-  	codeDisplayModule.innerHTML = "<pre><code>" + codeString + "</pre></code>";
-  	codeDisplay.classList.remove('hidden');
-  	body.style.overflow = "hidden";
-  }
-  closeCode.onclick = function (e) {
-  	codeDisplay.className += ' hidden';
-  	body.style.overflow = "auto";
-  }
-
-
 }
 
 
 
 
 
-
-  // function showCode() {
-  // 	var codeDisplay = document.getElementById('lightbox');
-  // 	var show = example_1.toString();
-  //   codeDisplay.innerHTML = "<pre><code>" + show + "</pre></code>";
-  // 	console.log(show)
-  // }
-  // showCode();
 
 
 
@@ -653,36 +698,6 @@ for (var i = 0; i < buttonsCount; i++) {
 
 
 
-// // Cambio de orden String
-// // function changeVowel(phrase) {
-// //   var noString = "Please write a String";
-// //   if ( typeof phrase != typeof noString) {
-// //     console.log(noString);
-// //   } else {
-// //  		var phraseArr = phrase.split(""),
-// //       vowels = "aeiou".split(""),
-// //       newArr = [],
-// //       k = 0;
-// //   for (j = 0; j < phraseArr.length; j++) {
-// //     for (i = 0; i < vowels.length; i++) {
-// //     	if ( phraseArr[j] === vowels[i]) {
-// //         newArr.unshift(vowels[i]);
-// //     	}
-// //     }
-// //   }
-// //   console.log(newArr)
-// //   for (var j = 0; j < phraseArr.length; j++) {
-// //   	for (var i = 0; i < vowels.length; i++) {
-// //   		if(phraseArr[j] === vowels[i]) {
-// //   			phraseArr.splice(j, 1, newArr[k++]);
-// //         break
-// //   		}
-// //   	}
-// //   }
-// //   console.log(phraseArr.join(""));
-// //   }
-// // }
-// // changeVowel("puto");
 
 
 
